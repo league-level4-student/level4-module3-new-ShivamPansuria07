@@ -15,8 +15,8 @@ public class LinkedListDemo {
          * points back to the previous node. This is a referred to as a
          * doubly-linked list.
          * 
-         * 1. Read through the LinkedList and Node classes.
-         * 
+         * 1. Read through the LinkedList and Node classes
+         * DONE
          * 2. Create a LinkedList of any type you like.
          * 
          * 3. Try using some LinkedList methods to add, remove and print a few
@@ -31,7 +31,23 @@ public class LinkedListDemo {
          * String nodes.
          * 
          */
-
+    	// This is how to print a linkedlist
+    	LinkedList<String> ll = new LinkedList<String>();
+    	ll.add("this");
+    	ll.add("is");
+    	ll.add("not");
+    	ll.add("cool");
+    	ll.remove(2);
+    	Node current = ll.getHead();
+    	Node tail = ll.getTail();
+    	for (int i = 0; i < ll.size(); i++) {
+		          System.out.println(current.getValue()); 
+		          current = current.getNext();
+		          
+		            
+		}
+       System.out.println();
+    	
     }
 
 }
