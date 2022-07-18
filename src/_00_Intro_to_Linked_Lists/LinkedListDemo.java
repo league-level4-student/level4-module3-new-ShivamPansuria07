@@ -40,8 +40,10 @@ public class LinkedListDemo {
     	ll.remove(2);
     	Node current = ll.getHead();
     	Node tail = ll.getTail();
-    	//while(current.getnext!=null)
+    	//while(current.getNext()!=null) {
     	for (int i = 0; i < ll.size(); i++) {
+			
+		
     		
     		if(current.getValue()=="cool") {
     			current.setValue("amazing");
