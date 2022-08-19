@@ -3,6 +3,7 @@ package _01_Spies_On_A_Train;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
 import _00_Intro_to_Linked_Lists.LinkedList;
@@ -35,34 +36,49 @@ public class SpiesOnATrain {
 	}
 
 	String findIntel(LinkedList<TrainCar> train, String[] clues) {
+		String PersonWithMostOccurences = "";
 		Node<TrainCar> current = train.getHead();
 		String suspect = current.getValue().questionPassenger();
 		List<String> arr = new ArrayList<>();
-		String ws = "";
+		//String ws = "";
 		String[] names = { "Ali", "Francis", "Kelly", "Cate", "Jason", "Phillip", "Norman", "Sam", "Desmond", "Vesper",
 				"Froy", "Lemmy", "Quiller", "Xander" };
 		while (current.getNext() != null) {
 
 			String cur = current.getValue().questionPassenger();
-			
+
 			if (findcur(clues, cur)) {
 				for (int j = 0; j < names.length; j++) {
 					if (cur.split("Hmm")[1].contains(names[j])) {
+
 						System.out.println(names[j]);
-					}
-
-				}
-
+						arr.add(names[j]);
+					}}
 			}
 			current = current.getNext();
 		}
-
-		// Go through each node and coun the passager from the clue
-		// call the question passanger go through all the clues and check out many times
-		// the persons name is called store this inside of a arraylist
-
-		return suspect;
-
-	}
-
+						HashMap<String, Integer> HashSuspect = new HashMap<String, Integer>();
+						for (String name : arr) {
+							if(HashSuspect.containsValue(name)) {
+								HashSuspect.put(name, HashSuspect.get(name)+1);
+								
+							}else {
+								HashSuspect.put(name,1);
+							}
+						}
+						int maxint = 0;
+			             int maxCount = -maxint;
+			             
+			             for(String eachkey : HashSuspect.keySet()) {
+			            	 if(HashSuspect.get(eachkey) > maxCount) {
+			            		 PersonWithMostOccurences = eachkey;
+			            		 maxCount = HashSuspect.get(eachkey);
+			            	 }
+			             }
+			             return PersonWithMostOccurences;
 }
+}
+
+// Go through each node and coun the passager from the clue
+// call the question passanger go through all the clues and check out many times
+// the persons name is called store this inside of a arraylist
