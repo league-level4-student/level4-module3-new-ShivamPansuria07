@@ -44,17 +44,15 @@ public class LinkedListDemo {
     	for (int i = 0; i < ll.size(); i++) {
 			
 		
-    		
-    		if(current.getValue()=="cool") {
-    			current.setValue("amazing");
+    		System.out.println(i);
     		}
 		          System.out.println(current.getValue()); 
 		          current = current.getNext();
 		          
 		            
 		}
-       System.out.println();
+       //System.out.println();
     	
     }
 
-}
+
