@@ -46,7 +46,7 @@ public class LinkedList<T> {
             }
 
         } else {
-//wlow
+
             int positionCounter = 1;
             Node<T> prev = head;
             Node<T> next = head.getNext();

@@ -68,15 +68,34 @@ public class RainbowZombieCongaLine {
 	 * conga line!
 	 */
 	public void everyoneOut(Zombie dancer) {
+		dancer.getZombieHatColor();
+ 			Zombie head = congaLine.getHead().getValue();
+ 			int position = 0;
+ 				while(congaLine.getHead().getNext() != null) {
+ 					position++;
+ 					if(dancer.getZombieHatColor().equals(congaLine.getHead().getValue().getZombieHatColor())) {
+ 						congaLine.remove(position);
+ 					}
+ 				}
+ 			}
+		    
 
-	}
+	
 
 	/*
 	 * Remove the first zombie with the same hat color as the passed in zombie from
 	 * the conga line!
 	 */
 	public void youAreDone(Zombie dancer) {
-
+		int position = 0;
+		boolean flag = true;
+		while(congaLine.getHead().getNext() != null && flag) {
+				position++;
+				if(dancer.getZombieHatColor().equals(congaLine.getHead().getValue().getZombieHatColor())) {
+					congaLine.remove(position);
+					flag = false;
+				}
+	}
 	}
 
 	/*
