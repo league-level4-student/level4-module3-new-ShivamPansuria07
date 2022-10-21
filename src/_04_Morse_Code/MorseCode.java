@@ -17,7 +17,7 @@ public class MorseCode implements Comparable<MorseCode> {
         this.coded = coded;
 
     }
-
+//lol
     public String getDecoded() {
         return decoded;
     }
