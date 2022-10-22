@@ -1,5 +1,7 @@
  package _04_Morse_Code;
 
+import javax.swing.JOptionPane;
+
 public class MorseCode implements Comparable<MorseCode> {
 
     private String decoded;
@@ -17,7 +19,7 @@ public class MorseCode implements Comparable<MorseCode> {
         this.coded = coded;
 
     }
-//lol
+
     public String getDecoded() {
         return decoded;
     }

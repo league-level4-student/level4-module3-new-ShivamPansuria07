@@ -76,7 +76,10 @@ public class BinaryTree<T extends Comparable<T>> {
 
         return current;
     }
-
+// binary tree important info
+//left node represents a value thats less than the root note
+//end branches of "leaf" point to null
+    
     /*
      * This method progresses through the tree in a similar manner to insert,
      * but stops whenever it finds a null meaning the data does not exist, or

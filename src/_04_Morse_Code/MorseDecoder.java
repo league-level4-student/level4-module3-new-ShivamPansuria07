@@ -1,6 +1,9 @@
 package _04_Morse_Code;
 
+import java.util.Iterator;
+
 import _03_Intro_to_Binary_Trees.BinaryTree;
+import _03_Intro_to_Binary_Trees.Node;
 
 public class MorseDecoder {
 
@@ -64,7 +67,19 @@ public class MorseDecoder {
      * 
      */
     void decode() {
+    	
         String morseCode = "-.-- --- ..- .- .-. . .- -- .- --.. .. -. --.";
+        String[] splitCode = morseCode.split(" ");
+    	BinaryTree<String> bt = new BinaryTree<String>();
+    	bt.insert(morseCode);
+    	Node<String> t = bt.getRoot();
+        for (int i = 0; i < splitCode.length; i++) {
+//			z
+		}
+    
+//    bt.printVertical();
+//    	System.out.println(t.getRight());
+//    	System.out.println(bt.getRoot());
         
     }
 
