@@ -1,6 +1,7 @@
 package _04_Morse_Code;
 
 import java.util.Iterator;
+import java.util.Scanner;
 
 import _03_Intro_to_Binary_Trees.BinaryTree;
 import _03_Intro_to_Binary_Trees.Node;
@@ -67,20 +68,37 @@ public class MorseDecoder {
      * 
      */
     void decode() {
-    	
-        String morseCode = "-.-- --- ..- .- .-. . .- -- .- --.. .. -. --.";
-        String[] splitCode = morseCode.split(" ");
-    	BinaryTree<String> bt = new BinaryTree<String>();
-    	bt.insert(morseCode);
-    	Node<String> t = bt.getRoot();
-        for (int i = 0; i < splitCode.length; i++) {
-//			z
-		}
-    
-//    bt.printVertical();
-//    	System.out.println(t.getRight());
-//    	System.out.println(bt.getRoot());
-        
+    	 Scanner input = new Scanner(System.in);  
+    	    System.out.println("Enter morse code: ");
+
+    	    String str = input.nextLine();
+//        String morseCode = "-.-- --- ..- .- .-. . .- -- .- --.. .. -. --.";
+        String[] splitCode = str.split(" ");
+        String decoded = "";
+        for(String s: splitCode) {
+        	 MorseCode morse = new MorseCode(s);
+        	 Node root = mcTree.getRoot();
+        	 while(root != null) {
+        		 MorseCode mor = (MorseCode) root.getValue();
+        		 if(morse.compareTo(mor)>0) {
+        			 root = root.getRight();
+        		 }else if(morse.compareTo(mor)<0) {
+        			 root = root.getLeft();
+        		 }else {
+        			decoded+=((MorseCode) (root.getValue())).getDecoded();
+        			break;
+        		 }
+        	 }
+        }
+        System.out.println(decoded);
+//    	BinaryTree<String> bt = new BinaryTree<String>();
+//    	bt.insert(morseCode);
+//    	Node<String> t = bt.getRoot();
+//        for (int i = 0; i < splitCode.length; i++) {
+//        	
+//		}
+
     }
 
 }
+
