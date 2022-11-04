@@ -3,7 +3,7 @@ package _05_Intro_to_AVL_Trees;
 import _03_Intro_to_Binary_Trees.BinaryTree;
 
 public class AVLTreeDemo {
-
+	
     /*
      * An AVLTree is a special BinaryTree that is capable of balancing itself.
      * With a regular binary tree, depending on the elements inserted, you might
@@ -31,7 +31,15 @@ public class AVLTreeDemo {
      */
 
     public static void main(String[] args) {
-
+    	BinaryTree<Integer> bt = new BinaryTree<Integer>();
+    	bt.insert(14);
+    	bt.insert(69);
+    	bt.printHorizontal();
+    	
+    	AVLTree<Integer> avlt = new AVLTree<Integer>();
+    	avlt.insert(14);
+    	avlt.insert(69);
+    	avlt.printHorizontal();
     }
 
 }
